@@ -65,13 +65,15 @@ class Main
   end
 
   def self.addToReadingList(selectedBook)
-    binding.pry
-    @@readingList.append(@@searchResults[selectedBook.to_i])
-    binding.pry
+    # binding.pry
+    @@readingList.append(@@searchResults[selectedBook.to_i - 1])
+    # binding.pry
     clearTerminal()
-    puts "#{@@searchResults[selectedBook.to_i]["volumeInfo"]["title"]} has been added to reading list!"
+
+
+    puts "#{@@searchResults[selectedBook.to_i - 1]["volumeInfo"]["title"]} has been added to reading list!"
     displayBookData(@@searchResults)
-    binding.pry
+    # binding.pry
     handleUserInput()
 
   end
