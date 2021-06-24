@@ -51,7 +51,7 @@ def displayBookData(bookDataArray)
   # Displays the book data, used for displaying search results and reading list data
   bookDataArray.each_with_index do |book, idx|
     puts "_____________________________________________________________________"
-    puts idx.to_s + ": "
+    puts (idx + 1).to_s + ": "
     puts formatBookData(book)
 
   end
