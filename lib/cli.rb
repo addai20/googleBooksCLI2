@@ -1,17 +1,12 @@
 require 'pry'
-# debugging tool
 require 'net/http'
-# tool for working retrieving API  data
 require 'json'
-# tool for formatting data retreived from API in Javascript Object Notation
 
 class Main
   # Initialize data structures to store book data
   @@readingList = []
   @@searchResults = nil
-
   # User session is active as long as value of @@active == true
-  # Will use this variable to stop application
   @@active = true
 
 
@@ -65,15 +60,10 @@ class Main
   end
 
   def self.addToReadingList(selectedBook)
-    # binding.pry
     @@readingList.append(@@searchResults[selectedBook.to_i - 1])
-    # binding.pry
     clearTerminal()
-
-
     puts "#{@@searchResults[selectedBook.to_i - 1]["volumeInfo"]["title"]} has been added to reading list!"
     displayBookData(@@searchResults)
-    # binding.pry
     handleUserInput()
 
   end
@@ -81,14 +71,11 @@ class Main
   def self.handleUserInput
     # displays instructions for how to navigate system
     displayInstructions()
-
-    # collects user input to execute instructions
     input = gets.chomp
 
   # This case handles options outlined in the instructions
     case input
       when "1"
-        # saves the first book in the searchResults array to the readingList array...
         addToReadingList(input)
 
       when "2"
@@ -101,14 +88,11 @@ class Main
         addToReadingList(input)
 
       when "5"
-        # binding.pry
         addToReadingList(input)
       when "6"
         clearTerminal()
-        # Prompts the user for another search query..
         run()
       when "7"
-        # Displays readingList
         clearTerminal()
         if @@readingList.length == 0
           # If there are no books in reading list, display the following
