@@ -72,11 +72,11 @@ def addToReadingList(selectedBook)
   puts "#{$searchResults[selectedBook.to_i]["volumeInfo"]["title"]} has been added to reading list!"
   displayBookData($searchResults)
   binding.pry
-  handleQuery()
+  handleUserInput()
 
 end
 
-def handleQuery
+def handleUserInput
   # displays instructions for how to navigate system
   instructions()
 
@@ -112,7 +112,7 @@ def handleQuery
         # If there are no books in reading list, display the following
         puts "There are no books in the Reading List!"
         displayBookData($searchResults)
-        handleQuery()
+        handleUserInput()
       else
         # otherwise, displays readingList
         clearTerminal()
@@ -125,7 +125,7 @@ def handleQuery
         end
         puts "_______________________END_READING_LIST___________________________"
         displayBookData($searchResults)
-        handleQuery()
+        handleUserInput()
 
       end
     when "8"
@@ -138,7 +138,7 @@ def handleQuery
       # If invalid response submitted, prompts user for a valid response
       puts "Please enter a valid response"
       puts "Press any number to return to the search results"
-      handleQuery()
+      handleUserInput()
     end
 
 end
@@ -158,7 +158,7 @@ def run
     displayBookData($searchResults)
 
     # display navigation instructions for the interface..
-    handleQuery()
+    handleUserInput()
 
   end
 end
