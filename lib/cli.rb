@@ -37,7 +37,7 @@ def clearTerminal
   system("clear")
 end
 
-def instructions
+def displayInstructions
   # Displays navigation instructions
   puts "_____________________________NAVIGATION______________________________"
   puts "** To add to reading list, enter a number 1-5 that corresponds to your desired book"
@@ -78,7 +78,7 @@ end
 
 def handleUserInput
   # displays instructions for how to navigate system
-  instructions()
+  displayInstructions()
 
   # collects user input to execute instructions
   input = gets.chomp

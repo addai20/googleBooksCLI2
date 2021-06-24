@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains code for a command line interface that uses the Google Books API to enable users to search for literature
 
-Things you may want to cover:
+Things to keep in mind:
 
-* Ruby version
+* Ruby version: ruby 2.6.1p33
 
-* System dependencies
+* For help installing ruby  please visit:
 
-* Configuration
+https://stackify.com/install-ruby-on-your-mac-everything-you-need-to-get-going/
 
-* Database creation
+            TO RUN THE APPLICATION:
 
-* Database initialization
+1) Navigate to the lib folder in your terminal
+2) Enter the following in your terminal: ruby cli.rb
+3) Read the in app instructions on how to use the application
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+            TESTING INSTRUCTIONS:
