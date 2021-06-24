@@ -64,6 +64,18 @@ def formatBookData(book)
   puts "Publisher: #{book["volumeInfo"]["publisher"]}"
 end
 
+def addToReadingList(selectedBook)
+  binding.pry
+  $readingList.append($searchResults[selectedBook.to_i])
+  binding.pry
+  clearTerminal()
+  puts "#{$searchResults[selectedBook.to_i]["volumeInfo"]["title"]} has been added to reading list!"
+  displayBookData($searchResults)
+  binding.pry
+  handleQuery()
+
+end
+
 def handleQuery
   # displays instructions for how to navigate system
   instructions()
@@ -75,40 +87,20 @@ def handleQuery
   case input
     when "1"
       # saves the first book in the searchResults array to the readingList array...
-      $readingList.append($searchResults[input.to_i])
-      clearTerminal()
-      # binding.pry
-      puts "#{$searchResults[input.to_i]["volumeInfo"]["title"]} has been added to reading list!"
-      displayBookData($searchResults)
-      handleQuery()
+      addToReadingList(input)
 
     when "2"
-      $readingList.append($searchResults[input.to_i])
-      clearTerminal()
-      puts "#{$searchResults[input.to_i]["volumeInfo"]["title"]} has been added to reading list!"
-      displayBookData($searchResults)
-      handleQuery()
+      addToReadingList(input)
 
     when "3"
-      $readingList.append($searchResults[input.to_i])
-      clearTerminal()
-      puts "#{$searchResults[input.to_i]["volumeInfo"]["title"]} has been added to reading list!"
-      displayBookData($searchResults)
-      handleQuery()
+      addToReadingList(input)
 
     when "4"
-      $readingList.append($searchResults[input.to_i])
-      clearTerminal()
-      puts "#{$searchResults[input.to_i]["volumeInfo"]["title"]} has been added to reading list!"
-      displayBookData($searchResults)
-      handleQuery()
+      addToReadingList(input)
 
     when "5"
-      $readingList.append($searchResults[input.to_i])
-      clearTerminal()
-      puts "#{$searchResults[input.to_i]["volumeInfo"]["title"]} has been added to reading list!"
-      displayBookData($searchResults)
-      handleQuery()
+      # binding.pry
+      addToReadingList(input)
     when "6"
       clearTerminal()
       # Prompts the user for another search query..
