@@ -21,6 +21,10 @@ class Main
     # prompts user for search query, stores in a variable
     puts "Please enter the name of an author or book"
     query = gets.chomp
+
+    if query == nil || query == ""
+      self.promptSearch()
+    end
     # base url for api call concatenated with user input/search query
     uri = URI('https://www.googleapis.com/books/v1/volumes?key=AIzaSyBBt_puiZZJw7Q8Fl7jtupk6BvGGpKYMEI&maxResults=5&q=' + query)
     @@searchResults = JSON.parse(Net::HTTP.get(uri))["items"]
@@ -44,11 +48,15 @@ class Main
 
   def self.displayBookData(bookDataArray)
     # Displays the book data, used for displaying search results and reading list data
+
+    if @@searchResults == nil || @@searchResults.length == 0
+      puts "There is no book data to display"
+    else
     bookDataArray.each_with_index do |book, idx|
       puts "_____________________________________________________________________"
       puts (idx + 1).to_s + ": "
       puts formatBookData(book)
-
+      end
     end
   end
 
@@ -122,8 +130,9 @@ class Main
         run()
       else
         # If invalid response submitted, prompts user for a valid response
+        clearTerminal()
         puts "Please enter a valid response"
-        puts "Press any number to return to the search results"
+        displayBookData(@@searchResults)
         handleUserInput()
       end
 
@@ -142,7 +151,6 @@ class Main
 
 
       displayBookData(@@searchResults)
-
       # display navigation instructions for the interface..
       handleUserInput()
 
