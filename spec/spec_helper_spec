@@ -1,0 +1,4 @@
+require "cli"
+
+RSpec.configure do |config|
+end

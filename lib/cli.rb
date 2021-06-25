@@ -9,6 +9,9 @@ class Main
   # User session is active as long as value of @@active == true
   @@active = true
 
+  def rspecTest
+    puts 0
+  end
 
   def self.sayGoodbye
     system("clear")

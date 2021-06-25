@@ -1,0 +1,24 @@
+# spec/string_calculator_spec.rb
+# describe StringCalculator do
+#
+#   describe ".add" do
+#     context "given an empty string" do
+#       it "returns zero" do
+#         expect(StringCalculator.add("")).to eq(0)
+#       end
+#     end
+#   end
+# end
+
+require 'lib/cli'
+require 'rails_helper'
+require 'rspec/rails'
+
+describe Main do
+  describe ".sayGoodbye" do
+    context "When invoked" do
+      it "prints two strings to the console" do
+        expect(Main.sayGoodbye).to output("Goodbye and thank you for using book search!")
+    end
+  end
+end
