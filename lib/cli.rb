@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 require 'net/http'
 require 'json'
 
@@ -164,8 +164,8 @@ class Main
 
 end
 
-mainInstance = Main.new
-mainInstance.run
+# mainInstance = Main.new
+# mainInstance.run
 
 
 
