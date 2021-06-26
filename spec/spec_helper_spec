@@ -1,4 +1,4 @@
-require "cli"
-
-RSpec.configure do |config|
-end
+# require_relative '../lib/cli'
+#
+# RSpec.configure do |config|
+# end

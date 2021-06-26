@@ -11,6 +11,7 @@ class Main
 
   def rspecTest
     puts 0
+    return 0
   end
 
   def self.sayGoodbye
@@ -160,7 +161,7 @@ class Main
     end
   end
 
-  run()
+  # run()
 
 end
 
